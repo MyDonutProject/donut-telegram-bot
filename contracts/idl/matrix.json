@@ -1,0 +1,620 @@
+{
+  "version": "0.1.0",
+  "name": "referral_system",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "state",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "registerWithoutReferrer",
+      "accounts": [
+        {
+          "name": "state",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "userWallet",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userWsolAccount",
+          "isMut": true,
+          "isSigner": false,
+          "docs": [
+            "User's WSOL account - Using UncheckedAccount to save stack space"
+          ]
+        },
+        {
+          "name": "userDonutAccount",
+          "isMut": true,
+          "isSigner": false,
+          "docs": [
+            "Account to receive DONUT tokens - Using UncheckedAccount to save stack space"
+          ]
+        },
+        {
+          "name": "wsolMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "bVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "bTokenVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "bVaultLpMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "bVaultLp",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vaultProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "protocolTokenFee",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "ammProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "depositAmount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "registerWithSolDeposit",
+      "accounts": [
+        {
+          "name": "state",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userWallet",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "referrer",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "referrerWallet",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userWsolAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userDonutAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "wsolMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "pool",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "bVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "bTokenVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "bVaultLpMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "bVaultLp",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vaultProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "programSolVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenMint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "protocolTokenFee",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "ammProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "depositAmount",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "ProgramState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "publicKey"
+          },
+          {
+            "name": "multisigTreasury",
+            "type": "publicKey"
+          },
+          {
+            "name": "nextUplineId",
+            "type": "u32"
+          },
+          {
+            "name": "nextChainId",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UserAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "isRegistered",
+            "type": "bool"
+          },
+          {
+            "name": "referrer",
+            "type": {
+              "option": "publicKey"
+            }
+          },
+          {
+            "name": "ownerWallet",
+            "type": "publicKey"
+          },
+          {
+            "name": "upline",
+            "type": {
+              "defined": "ReferralUpline"
+            }
+          },
+          {
+            "name": "chain",
+            "type": {
+              "defined": "ReferralChain"
+            }
+          },
+          {
+            "name": "reservedSol",
+            "type": "u64"
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "AirdropProgramState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin",
+            "type": "publicKey"
+          },
+          {
+            "name": "donutTokenMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "currentWeek",
+            "type": "u8"
+          },
+          {
+            "name": "matrixProgramId",
+            "type": "publicKey"
+          },
+          {
+            "name": "startTimestamp",
+            "type": "i64"
+          },
+          {
+            "name": "totalMatricesCompleted",
+            "type": "u64"
+          },
+          {
+            "name": "matricesByWeek",
+            "type": {
+              "array": ["u64", 36]
+            }
+          },
+          {
+            "name": "totalUsers",
+            "type": "u64"
+          },
+          {
+            "name": "tokenVault",
+            "type": "publicKey"
+          },
+          {
+            "name": "tokenVaultBump",
+            "type": "u8"
+          },
+          {
+            "name": "initialized",
+            "type": "bool"
+          },
+          {
+            "name": "vaultCreated",
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UplineEntry",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pda",
+            "type": "publicKey"
+          },
+          {
+            "name": "wallet",
+            "type": "publicKey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ReferralUpline",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "depth",
+            "type": "u8"
+          },
+          {
+            "name": "upline",
+            "type": {
+              "vec": {
+                "defined": "UplineEntry"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ReferralChain",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "slots",
+            "type": {
+              "array": [
+                {
+                  "option": "publicKey"
+                },
+                3
+              ]
+            }
+          },
+          {
+            "name": "filledSlots",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "SlotFilled",
+      "fields": [
+        {
+          "name": "slotIdx",
+          "type": "u8",
+          "index": false
+        },
+        {
+          "name": "chainId",
+          "type": "u32",
+          "index": false
+        },
+        {
+          "name": "user",
+          "type": "publicKey",
+          "index": false
+        },
+        {
+          "name": "owner",
+          "type": "publicKey",
+          "index": false
+        }
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "ReferrerNotRegistered",
+      "msg": "Referrer account is not registered"
+    },
+    {
+      "code": 6001,
+      "name": "MissingVaultAAccounts",
+      "msg": "Missing required vault A accounts"
+    },
+    {
+      "code": 6002,
+      "name": "NotAuthorized",
+      "msg": "Not authorized"
+    },
+    {
+      "code": 6003,
+      "name": "InvalidSlotOwner",
+      "msg": "Slot account not owned by program"
+    },
+    {
+      "code": 6004,
+      "name": "InvalidAccountOwner",
+      "msg": "Invalid account owner"
+    },
+    {
+      "code": 6005,
+      "name": "SlotNotRegistered",
+      "msg": "Slot account not registered"
+    },
+    {
+      "code": 6006,
+      "name": "InsufficientDeposit",
+      "msg": "Insufficient deposit amount"
+    },
+    {
+      "code": 6007,
+      "name": "SolReserveFailed",
+      "msg": "Failed to process SOL reserve"
+    },
+    {
+      "code": 6008,
+      "name": "ReferrerPaymentFailed",
+      "msg": "Failed to process referrer payment"
+    },
+    {
+      "code": 6009,
+      "name": "WrapSolFailed",
+      "msg": "Failed to wrap SOL to WSOL"
+    },
+    {
+      "code": 6010,
+      "name": "UnwrapSolFailed",
+      "msg": "Failed to unwrap WSOL to SOL"
+    },
+    {
+      "code": 6011,
+      "name": "InvalidWalletForATA",
+      "msg": "Invalid wallet for ATA"
+    },
+    {
+      "code": 6012,
+      "name": "MissingUplineAccount",
+      "msg": "Missing required account for upline"
+    },
+    {
+      "code": 6013,
+      "name": "PaymentWalletInvalid",
+      "msg": "Payment wallet is not a system account"
+    },
+    {
+      "code": 6014,
+      "name": "InvalidPoolAddress",
+      "msg": "Invalid pool address"
+    },
+    {
+      "code": 6015,
+      "name": "InvalidVaultAddress",
+      "msg": "Invalid vault address"
+    },
+    {
+      "code": 6016,
+      "name": "InvalidTokenMintAddress",
+      "msg": "Invalid token mint address"
+    },
+    {
+      "code": 6017,
+      "name": "InvalidVaultProgram",
+      "msg": "Invalid vault program address"
+    },
+    {
+      "code": 6018,
+      "name": "InvalidAmmProgram",
+      "msg": "Invalid AMM program"
+    },
+    {
+      "code": 6019,
+      "name": "InvalidProtocolFeeAccount",
+      "msg": "Invalid protocol fee account"
+    },
+    {
+      "code": 6020,
+      "name": "SwapFailed",
+      "msg": "Failed to process swap"
+    },
+    {
+      "code": 6021,
+      "name": "BurnFailed",
+      "msg": "Failed to burn tokens"
+    },
+    {
+      "code": 6022,
+      "name": "PriceMeteoraReadFailed",
+      "msg": "Failed to read Meteora pool data"
+    },
+    {
+      "code": 6023,
+      "name": "MeteoraCalculationOverflow",
+      "msg": "Meteora pool calculation overflow"
+    },
+    {
+      "code": 6024,
+      "name": "UnusedDepositDetected",
+      "msg": "Deposit was not allocated - critical error"
+    },
+    {
+      "code": 6025,
+      "name": "UplineRequiredForNonBase",
+      "msg": "Non-base user must provide uplines for slot 3"
+    },
+    {
+      "code": 6026,
+      "name": "UserNotRegisteredInAirdrop",
+      "msg": "User not registered in airdrop program"
+    }
+  ]
+}

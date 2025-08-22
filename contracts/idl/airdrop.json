@@ -1,0 +1,531 @@
+{
+  "version": "0.1.0",
+  "name": "donut_airdrop",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "admin",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "programState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "matrixProgramId",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "donutTokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "week1Data",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "createTokenVault",
+      "accounts": [
+        {
+          "name": "admin",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "programState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "donutTokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initializeWeek",
+      "accounts": [
+        {
+          "name": "programState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "admin",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "weeklyData",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "week",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "registerUser",
+      "accounts": [
+        {
+          "name": "programState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userWallet",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "userAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "notifyMatrixCompletion",
+      "accounts": [
+        {
+          "name": "programState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "referrerWallet",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "userAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "currentWeekData",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "nextWeekData",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userWallet",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "instructionsSysvar",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "processWeeklyDistribution",
+      "accounts": [
+        {
+          "name": "programState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "admin",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "weeklyData",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "nextWeekData",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "week",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "claimTokens",
+      "accounts": [
+        {
+          "name": "programState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userWallet",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "userAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "userTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "donutTokenMint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "associatedTokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "emergencyTransfer",
+      "accounts": [
+        {
+          "name": "programState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "admin",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "tokenVault",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "recipientTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "ProgramState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin",
+            "type": "publicKey"
+          },
+          {
+            "name": "donutTokenMint",
+            "type": "publicKey"
+          },
+          {
+            "name": "currentWeek",
+            "type": "u8"
+          },
+          {
+            "name": "matrixProgramId",
+            "type": "publicKey"
+          },
+          {
+            "name": "startTimestamp",
+            "type": "i64"
+          },
+          {
+            "name": "totalMatricesCompleted",
+            "type": "u64"
+          },
+          {
+            "name": "matricesByWeek",
+            "type": {
+              "array": ["u64", 36]
+            }
+          },
+          {
+            "name": "totalUsers",
+            "type": "u64"
+          },
+          {
+            "name": "tokenVault",
+            "type": "publicKey"
+          },
+          {
+            "name": "tokenVaultBump",
+            "type": "u8"
+          },
+          {
+            "name": "initialized",
+            "type": "bool"
+          },
+          {
+            "name": "vaultCreated",
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "WeeklyData",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "week",
+            "type": "u8"
+          },
+          {
+            "name": "totalMatrices",
+            "type": "u64"
+          },
+          {
+            "name": "tokensPerMatrix",
+            "type": "u64"
+          },
+          {
+            "name": "distributionProcessed",
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UserAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "type": "publicKey"
+          },
+          {
+            "name": "totalMatricesCompleted",
+            "type": "u64"
+          },
+          {
+            "name": "tokensEarned",
+            "type": "u64"
+          },
+          {
+            "name": "tokensClaimed",
+            "type": "u64"
+          },
+          {
+            "name": "matrixCounts",
+            "type": {
+              "array": ["u32", 36]
+            }
+          },
+          {
+            "name": "claimedWeeks",
+            "type": {
+              "array": ["u8", 5]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "NotAuthorized",
+      "msg": "Not authorized"
+    },
+    {
+      "code": 6001,
+      "name": "InvalidWeek",
+      "msg": "Invalid week"
+    },
+    {
+      "code": 6002,
+      "name": "WeekAlreadyProcessed",
+      "msg": "Week already processed"
+    },
+    {
+      "code": 6003,
+      "name": "NoTokensToClaim",
+      "msg": "No tokens to claim"
+    },
+    {
+      "code": 6004,
+      "name": "DistributionCalculationFailed",
+      "msg": "Distribution calculation failed"
+    },
+    {
+      "code": 6005,
+      "name": "TokenTransferFailed",
+      "msg": "Token transfer failed"
+    },
+    {
+      "code": 6006,
+      "name": "InvalidAccountOwner",
+      "msg": "Program is not the owner of the account"
+    },
+    {
+      "code": 6007,
+      "name": "AlreadyInitialized",
+      "msg": "Airdrop already initialized"
+    },
+    {
+      "code": 6008,
+      "name": "UserAccountAlreadyExists",
+      "msg": "User account already exists"
+    },
+    {
+      "code": 6009,
+      "name": "WeekLimitExceeded",
+      "msg": "Week limit exceeded"
+    },
+    {
+      "code": 6010,
+      "name": "WeekDataNotFound",
+      "msg": "Week data not found"
+    },
+    {
+      "code": 6011,
+      "name": "AccountCreationFailed",
+      "msg": "Error creating account"
+    },
+    {
+      "code": 6012,
+      "name": "WeekDataVerificationFailed",
+      "msg": "Error verifying week data"
+    },
+    {
+      "code": 6013,
+      "name": "ArithmeticOverflow",
+      "msg": "Arithmetic overflow during calculation"
+    },
+    {
+      "code": 6014,
+      "name": "VaultAlreadyCreated",
+      "msg": "Vault already created"
+    },
+    {
+      "code": 6015,
+      "name": "VaultNotCreated",
+      "msg": "Vault not created"
+    },
+    {
+      "code": 6016,
+      "name": "InconsistentMatrixCount",
+      "msg": "Inconsistency in matrix counters"
+    },
+    {
+      "code": 6017,
+      "name": "MustBeCalledViaCPI",
+      "msg": "This instruction must be called via CPI from authorized program"
+    },
+    {
+      "code": 6018,
+      "name": "InstructionSysvarError",
+      "msg": "Failed to load instruction sysvar"
+    }
+  ]
+}

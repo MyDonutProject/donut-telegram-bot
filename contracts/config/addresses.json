@@ -1,0 +1,49 @@
+{
+    "network": "mainnet-beta",
+    "programs": {
+      "matrix": "27j1sNEtfRWBYnaNfWcbpJ4t3QAiWqq9rB4bBgLATmPW",
+      "airdrop": "ABSanWxsMbM2uLfBz31vbB33qdaEjE8wjRfVWgBw9Cdw"
+    },
+    "matrix": {
+      "programId": "27j1sNEtfRWBYnaNfWcbpJ4t3QAiWqq9rB4bBgLATmPW",
+      "stateAddress": "C5w4cAmQXU1K8HYCBBACRw451QNsmRbtLS7J59rL1DEN",
+      "programSolVault": "4zim7ftQ6Kk2Ygd4tgakof4k7CQM9Dsm3idbYjWGXvSy",
+      "programSolVaultBump": 255,
+      "ownerWallet": "24bvHXAxxVT2HxuoBptyG9guhE4vUKUTzFWPVBmHRCzw",
+      "multisigTreasury": "QgNN4aW9hPz4ANP1LqzR2FkDPZo9MzDZxDQ4abovHYv",
+      "defaultReferrer": "7xGZx4p8ta1jsMU96opkeH8iF84gfLv5kaEvbTfeEGxU"
+    },
+    "airdrop": {
+      "programId": "ABSanWxsMbM2uLfBz31vbB33qdaEjE8wjRfVWgBw9Cdw",
+      "programState": "9HFnt2fksAfQhYh2TfKczpiBmBsE1kGASsf6VHcaTUwt",
+      "tokenVault": "BbQZnzMhpxQwL5ECdeZQ2BDFFQ6QWUf9FFo8psGwKij9",
+      "vaultMetadata": "3dNWQT9QkN7qS1QL2p2WMGpYazRaphvDdQ4WotPdRkpt",
+      "adminPublicKey": "24bvHXAxxVT2HxuoBptyG9guhE4vUKUTzFWPVBmHRCzw"
+    },
+    "tokens": {
+      "donut": "DoNUTcc99FrkpQyeaLkYRcangQboNBYP17x7wbqvCqdo",
+      "wsol": "So11111111111111111111111111111111111111112"
+    },
+    "meteora": {
+      "pool": "CbPqqtMDr23yGoBgWwYdd3DdDPs6Md9fkYDLvN2nhhTE",
+      "ammProgram": "Eo7WjKq67rjJQSZxS6z3YkapzY3eMj6Xy8X5EQVn5UaB",
+      "vaultProgram": "24Uqj9JCLxUeoC3hGfh5W3s9FM9uCHDS2SG3LYwBpyTi",
+      "aVault": "5w7Jtio3JdQNA5AJ5xscf4CXCoYyh8bKLRMifrwyVvmC",
+      "aTokenVault": "EpCRN19HhzSRouHX2A3ww3v6MkivZntuYzMoEKbi4TBd",
+      "aVaultLp": "AVd4YdUCmU5uC1pvCNeDMi9aLq2zLX7m3Waxc1AMoUTa",
+      "aVaultLpMint": "36kcK9rFc8pQhzDnGj95ik86gnENqKZxNoKu4Lu6UcNZ",
+      "bVault": "FERjPVNEa7Udq8CEv68h6tPL46Tq7ieE49HrE2wea3XT",
+      "bTokenVault": "HZeLxbZ9uHtSpwZC3LBr4Nubd14iHwz7bRSghRZf5VCG",
+      "bVaultLp": "AqjUDqBoSSHrmMPaj9NaLaFVVTxLGJf2vAtNGTVur1XP",
+      "bVaultLpMint": "FZN7QZ8ZUUAxMPfxYEYkH3cXUASzH8EqA6B4tyCL8f1j",
+      "protocolTokenFee": "FjT6jkxcZPU78v5E4Pomri1Kq6SBmkuz1n5M36xZyhwW"
+    },
+    "chainlink": {
+      "program": "HEvSKofvBgfaexv23kMabbYqxasxU3mQ4ibBMEmJWHny",
+      "solUsdFeed": "99B2bTijsU6f1GCT73HmdR7HCFFjGMBcPZY6jZ96ynrR"
+    },
+    "systemProgram": "11111111111111111111111111111111",
+    "tokenProgram": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+    "associatedTokenProgram": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL",
+    "rent": "SysvarRent111111111111111111111111111111111"
+  }
